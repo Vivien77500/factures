@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demande de Facture</title>
+    <style>
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            width: 50%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-left: 5px solid #6fb98f;
+        }
+        h1 {
+            color: #6fb98f;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            background-color: #6fb98f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #5a987b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Demande de Facture</h1>
+        <form action="https://formspree.io/f/xwpkbywk" method="POST">
+            <label for="mandataire">Nom et prénom du mandataire :</label>
+            <input type="text" id="mandataire" name="mandataire" required>
+
+            <label for="date_signature">Date de signature de l'acte authentique ou du bail :</label>
+            <input type="date" id="date_signature" name="date_signature" required>
+
+            <label for="honoraires">Honoraires TTC :</label>
+            <input type="text" id="honoraires" name="honoraires" required>
+
+            <label for="charge">Charge (Acquéreur ou Vendeur) :</label>
+            <select id="charge" name="charge" required>
+                <option value="acquéreur">Acquéreur</option>
+                <option value="vendeur">Vendeur</option>
+            </select>
+
+            <label for="designation">Désignation et adresse du bien :</label>
+            <input type="text" id="designation" name="designation" required>
+
+            <label for="numero_mandat">Numéro du mandat :</label>
+            <input type="text" id="numero_mandat" name="numero_mandat" required>
+
+            <label for="vendeurs">Nom et adresse des vendeurs :</label>
+            <textarea id="vendeurs" name="vendeurs" rows="4" required></textarea>
+
+            <label for="acquereurs">Nom et adresse des acquéreurs :</label>
+            <textarea id="acquereurs" name="acquereurs" rows="2" required></textarea>
+
+            <label for="notaire_nom">Nom du notaire :</label>
+            <input type="text" id="notaire_nom" name="notaire_nom" required>
+
+            <label for="notaire_email">Email du notaire :</label>
+            <input type="email" id="notaire_email" name="notaire_email" required>
+
+            <button type="submit">Envoyer la demande de facture</button>
+        </form>
+    </div>
+</body>
+</html>
